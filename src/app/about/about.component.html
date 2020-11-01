@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Offensive Language Detector</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="./src/app/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./src/app/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./src/app/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./src/app/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="./src/app/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./src/app/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./src/app/css/util.css">
+	<link rel="stylesheet" type="text/css" href="./src/app/css/main.css">
+<!--===============================================================================================-->
+<!--===============================================================================================-->	
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark background">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+          <img src="./src/app/offensive2.jpg" alt="logo" style="width:40px;">
+        </a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+                <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/home']"><font size="4" color="white">Home</font></a>
+                      </li>
+          <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/about']"><font size="4" color="white"><u>About </u></font></a>
+            </li>
+          <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/developers']"><font size="4" color="white">Developers</font></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="row">
+            <div class="col-sm-12 homecomponent">
+                <h4 style="font-weight:bold">About this Application:</h4>
+This application uses Machine Lerning and utilizes the publicly available crowdsourced data to train the Machine Learning Models.<br>
+
+Train the model using supervised deep learning techniques to identify any offensive language present in a text.<br>
+We have experimented with different classifiers such as Maxent Model(Logistic Regression) with L2 regularization, MultinomialNB (Naive Bayes), LinearSVC   (Support Vector Machines), and SGDClassifier (Stochastic Gradient Descent).
+<br><br>
+<br><h5 style="font-weight:bold">The Data Set is as follows:</h5>
+<br>
+                    tweet: Twitter tweet data.
+                    <br>
+                    count: number of CrowdFlower users who coded each tweet (min is 3, sometimes more users coded a tweet when judgments were determined to be unreliable).
+                    <br>
+                    hate_speech: Number of CF users who judged the tweet to be hate speech.
+                    <br>
+                    offensive_language: Number of CF users who judged the tweet to be offensive.
+                    <br>
+                    neither:  Number of CF users who judged the tweet to be neither offensive nor non-offensive.
+                    <br>
+
+                    The following is the snapshot of how the dataset looks like:
+                    <br>
+                    <div >
+                            <img style="width:50%;height: 50%;" align="middle" src="./src/app/datasetsoc.png" alt="dataset" >
+                        </div>
+                        <br>
+                        <br>
+<div>
+        <h5 style="font-weight:bold">Procedure and Overview:</h5>
+        Data processing and cleaning is done by removing stop words and alphanumeric characters.<br>
+                Feature vector is built using n-gram range from 1 to 4.<br>
+                l2 norm is used for regularization.<br>
+                
+</div>
+The following are the confusion matrices obtained by different models:
+                    <br>
+                    <div >
+                            <br><h5 style="font-weight:bold">Confusion Matrix for Logistic regression:</h5>
+                            <img style="width:50%;height: 50%;" align="middle" src="./src/app/logisticrig.png" alt="dataset" >
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                    <div >
+                            <br><h5 style="font-weight:bold">Confusion Matrix for Multinomial Naïve Bayes:</h5>
+                            <img style="width:50%;height: 50%;" align="middle" src="./src/app/naivebayes.png" alt="dataset" >
+                             
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                    <div >
+                            
+                            <br><h5 style="font-weight:bold">Confusion Matrix for Linear Support Vector Classification:</h5>
+                            <img style="width:50%;height: 50%;" align="middle" src="./src/app/linearvectoreg.png" alt="dataset" >
+                        </div>
+                        <br>
+                        <br>
+
+                        <br><h5 style="font-weight:bold">References</h5>
+<br>
+[1] https://competitions.codalab.org/competitions/2001 <br>
+
+[2] Davidson, T., Warmsley, D., Macy, M. and Weber, I. (2017) Automated Hate Speech Detection and the Problem of Offensive Language. Proceedings of ICWSM. <br>
+
+[3] Kumar, R., Ojha, A.K., Malmasi, S. and Zampieri, M. (2018) Benchmarking Aggression Identification in Social Media. In Proceedings of the First Workshop on Trolling, Aggression and Cyberbullying (TRAC). pp. 1-11. <br>
+
+[4] Malmasi, S., Zampieri, M. (2018) Challenges in Discriminating Profanity from Hate Speech. Journal of Experimental & Theoretical Artificial Intelligence. Volume 30, Issue 2, pp. 187-202. Taylor & Francis. <br>
+
+[5] Waseem, Z., Davidson, T., Warmsley, D. and Weber, I. (2017) Understanding Abuse: A Typology of Abusive Language Detection Subtasks. Proceedings of the Abusive Language Online Workshop. <br>
+
+                        
+                                    <div align="right">
+                        <label class="logoutLblPos">
+                                <p><a [routerLink]="['/login']" ><font color="white">Logout</font></a></p>
+                            </label>
+                            </div>
+            </div>
+        </div>
+    
+            </body>

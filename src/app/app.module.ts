@@ -14,14 +14,20 @@ import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { HomeComponent } from './home';
+// import { AboutComponent } from './about';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
+import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { DevelopersComponent } from './developers/developers.component';
+
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
+        FormsModule,
         routing
     ],
     declarations: [
@@ -29,7 +35,9 @@ import { RegisterComponent } from './register';
         AlertComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        AboutComponent,
+        DevelopersComponent
     ],
     providers: [
         AuthGuard,
