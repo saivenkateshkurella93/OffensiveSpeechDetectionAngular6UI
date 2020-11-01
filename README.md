@@ -1,5 +1,4 @@
 # Offensive Language Detection Web Application UI in Angular 6
-Offensive Language Detection Web Application UI in Angular 6
 
 As the number of people using social media increases,
 offensive language is widespread in any social media
