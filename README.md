@@ -1,5 +1,4 @@
-# angular-6-registration-login-example
+# Offensive Language Detection Web Application UI in Angular 6
+Offensive Language Detection Web Application UI in Angular 6
 
-Angular 6 User Registration and Login Example with Webpack 4
 
-Full tutorial with example available at http://jasonwatmore.com/post/2018/05/16/angular-6-user-registration-and-login-example-tutorial
